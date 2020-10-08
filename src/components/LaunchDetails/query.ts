@@ -1,9 +1,8 @@
 import gql from "graphql-tag";
 
 export const LaunchDetails = gql`
-  query LaunchDetails($ids: String!) {
-    launches(ids: $ids) {
-      flight_number
+  query LaunchDetails($id: String!) {
+    launch(id: $id) {
       mission_name
       launch_year
       launch_success
@@ -16,7 +15,6 @@ export const LaunchDetails = gql`
         rocket_type
       }
       links {
-        video_link
         flickr_images
       }
     }
