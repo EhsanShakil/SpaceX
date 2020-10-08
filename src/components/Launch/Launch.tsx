@@ -1,10 +1,20 @@
 import React from "react";
+import { LaunchesQuery } from "../../generated/graphql";
 
-const Launch = ({ data }: any) => {
+interface Props {
+  data: LaunchesQuery;
+}
+const Launch: React.FC<Props> = ({ data }: any) => {
   return (
     <div>
       <h1>SpaceX data</h1>
-      {console.log(data)}
+      {data.launches?.map((details: any, id: any) => {
+        return (
+          <div key={id}>
+            <li>{details?.mission_name}</li>
+          </div>
+        );
+      })}
     </div>
   );
 };
