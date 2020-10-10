@@ -11,7 +11,11 @@ const Launch: React.FC<Props> = ({ data }: any) => {
       {data.launches?.map((details: any, id: any) => {
         return (
           <div key={id}>
-            <li>{details?.mission_name}</li>
+            <p>{details?.flight_number}</p>
+            <p>{details?.mission_name}</p>
+            <p>{details?.launch_year}</p>
+            <p>{details?.launch_success}</p>
+            <br />
           </div>
         );
       })}
