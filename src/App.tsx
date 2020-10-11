@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import Launch from "./components/Launch";
 import LaunchDetails from './components/LaunchDetails'
 

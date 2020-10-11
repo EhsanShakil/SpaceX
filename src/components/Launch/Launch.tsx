@@ -1,5 +1,6 @@
 import React from "react";
 import { LaunchesQuery } from "../../generated/graphql";
+import './style.css'
 
 interface Props {
   data: LaunchesQuery;
@@ -8,17 +9,17 @@ const Launch: React.FC<Props> = ({ data }: any) => {
   return (
     <div>
       <h1>SpaceX data</h1>
+      <div className='container'>
       {data.launches?.map((details: any, id: any) => {
         return (
-          <div key={id}>
-            <p>{details?.flight_number}</p>
-            <p>{details?.mission_name}</p>
-            <p>{details?.launch_year}</p>
-            <p>{details?.launch_success}</p>
-            <br />
+          <div key={id} className='data'>
+            <h3>Flight Number: {details?.flight_number}</h3>
+            <h3>Mission Name: {details?.mission_name}</h3>
+            <h3>Launch Year: {details?.launch_year}</h3>
           </div>
         );
       })}
+        </div>
     </div>
   );
 };
