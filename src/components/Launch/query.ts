@@ -7,6 +7,10 @@ export const Launch = gql`
       mission_name
       launch_year
       launch_success
+      links {
+        video_link
+        flickr_images
+      }
     }
   }
 `;
