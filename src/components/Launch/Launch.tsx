@@ -13,7 +13,7 @@ const Launch: React.FC<Props> = ({ data }: any) => {
         return (
           <div key={id} className='container'>
             <div>
-              {details?.links.flickr_images.map((image: any, index: any) => <img key={index} src={image} alt="spacex" />)}
+              {details?.links.flickr_images.map((image: any, index: any) => <img key={index} src={image} alt="spacex" width='100px' height='100px'/>)}
             </div>
             <h3>Flight Number: {details?.flight_number}</h3>
             <h3>Mission Name: {details?.mission_name}</h3>
