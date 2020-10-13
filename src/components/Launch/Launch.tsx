@@ -2,16 +2,19 @@ import React from "react";
 import { LaunchesQuery } from "../../generated/graphql";
 import './style.css'
 
-interface Props {
+interface OwnProps {
+  handleChangeId: (newId: number) => void;
+}
+interface Props  {
   data: LaunchesQuery;
 }
-const Launch: React.FC<Props> = ({ data }: any) => {
+const Launch: React.FC<Props> = ({ data}, {handleChangeId}: OwnProps) => {
   return (
     <div>
       <h1>SpaceX data</h1>
       {data.launches?.map((details: any, id: any) => {
         return (
-          <div key={id} className='container'>
+          <div key={id} className='container' onClick={() => handleChangeId(details?.flight_number!)}>
             <div>
               {details?.links.flickr_images.map((image: any, index: any) => <img key={index} src={image} alt="spacex" width='100px' height='100px'/>)}
             </div>
