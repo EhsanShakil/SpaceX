@@ -5,10 +5,10 @@ import "./style.css";
 export interface OwnProps {
   handleChangeId: (newId: number) => void;
 }
-interface Props extends OwnProps {
+interface Props extends OwnProps{
   data: LaunchesQuery;
 }
-const Launch: React.FC<Props> = ({ data , handleChangeId }) => {
+const Launch: React.FC<Props> = ({ data, handleChangeId }) => {
   return (
     <div>
       <h1>SpaceX data</h1>
@@ -17,7 +17,7 @@ const Launch: React.FC<Props> = ({ data , handleChangeId }) => {
           <div
             key={id}
             className="container"
-            onClick={() => handleChangeId(details.flight_number)}
+            onClick={() => handleChangeId(details.flight_number!)}
           >
             <div>
               {details?.links.flickr_images.map((image: any, index: any) => (
