@@ -1,3 +1,10 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .container {
   margin-left: 20px;
   margin-bottom: 20px;
