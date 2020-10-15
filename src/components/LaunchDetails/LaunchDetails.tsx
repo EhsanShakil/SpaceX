@@ -1,5 +1,6 @@
 import React from "react";
 import { LaunchDetailsQuery } from '../../generated/graphql'
+import './launchdetails.css'
 
 interface Props {
     data: LaunchDetailsQuery

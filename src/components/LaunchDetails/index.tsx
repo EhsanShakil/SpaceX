@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useLaunchDetailsQuery } from "../../generated/graphql";
 import LaunchDetails from "./LaunchDetails";
+import './launchdetails.css'
 
 interface OwnProps {
   id: number;
@@ -14,9 +15,9 @@ const LaunchDetailsContainer = ({ id }: OwnProps) => {
     refetch();
   }, [id]);
 
-  if (loading) return <h1>Data is loading</h1>;
+  if (loading) return <h1 className='loading'>Data is loading...</h1>;
 
-  if (error || !data) return <h1>There was an error no data found</h1>;
+  if (error || !data) return <h1 className='error'>There was an error no data found</h1>;
 
   return (
     <div>
