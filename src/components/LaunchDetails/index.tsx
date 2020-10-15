@@ -13,7 +13,7 @@ const LaunchDetailsContainer = ({ id }: OwnProps) => {
   useEffect(() => {
     refetch();
   }, [id]);
-    
+
   if (loading) return <h1>Data is loading</h1>;
 
   if (error || !data) return <h1>There was an error no data found</h1>;
