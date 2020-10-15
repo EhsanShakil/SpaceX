@@ -8,10 +8,14 @@ export interface OwnProps {
 interface Props extends OwnProps {
   data: LaunchesQuery;
 }
+const image = require("../../rocket.png");
+
 const Launch: React.FC<Props> = ({ data, handleChangeId }) => {
   return (
     <div>
-      <h1 style={{ display: "flex", justifyContent: "center", color: 'white' }}>SpaceX Launches</h1>
+      <h1 style={{ display: "flex", justifyContent: "center", color: "white" }}>
+        <img src={image} alt="rocket" width='50px' height='50px'/> SpaceX Launches
+      </h1>
       <div className="header">
         {data.launches?.map((details: any, id: any) => {
           return (
