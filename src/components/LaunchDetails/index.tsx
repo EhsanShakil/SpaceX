@@ -13,7 +13,7 @@ const LaunchDetailsContainer = ({ id }: OwnProps) => {
   });
   useEffect(() => {
     refetch();
-  }, [id]);
+  }, [refetch]);
 
   if (loading) return <h1 className='loading'>Data is loading...</h1>;
 

@@ -19,9 +19,8 @@ const Launch: React.FC<Props> = ({ data, handleChangeId }) => {
       <div className="header">
         {data.launches?.map((details: any, id: any) => {
           return (
-            <Link to={`${details?.mission_name}`} className="container">
+            <Link to={`${details?.mission_name}`} className="container" key={id}>
               <div
-                key={id}
                 onClick={() => handleChangeId(details.flight_number!)}
               >
                 <h3>Flight Number: {details?.flight_number}</h3>
