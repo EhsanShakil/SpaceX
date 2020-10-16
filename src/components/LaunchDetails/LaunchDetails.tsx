@@ -1,23 +1,53 @@
 import React from "react";
-import { LaunchDetailsQuery } from '../../generated/graphql'
-import './launchdetails.css'
+import { LaunchDetailsQuery } from "../../generated/graphql";
+import "./launchdetails.css";
 
 interface Props {
-    data: LaunchDetailsQuery
+  data: LaunchDetailsQuery;
 }
 
 const LaunchDetails: React.FC<Props> = ({ data }) => {
-    return (
-        <div className='launchesDetails'>
-            <h1>Mission Name: {data.launch?.mission_name}</h1>
-            <h1>Launch Site: {data.launch?.launch_site?.site_name}</h1>
-            <h1>Launch Year: {data.launch?.launch_year}</h1>
-            <h1>Launch Year: {data.launch?.launch_success}</h1>
-            <h1>Rocket Name: {data.launch?.rocket?.rocket_name}</h1>
+  return (
+    <div className="launchesDetails">
+      <dl>
+        <dt>
+          <h2>Mission Name:</h2>
+        </dt>
+        <dd>{data.launch?.mission_name}</dd>
+      </dl>
+      <dl>
+        <dt>
+          <h2>Launch Site:</h2>
+        </dt>
+        <dd>{data.launch?.launch_site?.site_name}</dd>
+      </dl>
+      <dl>
+        <dt>
+          <h2>Launch Year:</h2>
+        </dt>
+        <dd>{data.launch?.launch_year}</dd>
+      </dl>
+      <dl>
+        <dt>
+          <h2>Rocket Name:</h2>
+        </dt>
+        <dd>{data.launch?.rocket?.rocket_name}</dd>
+      </dl>
+      <dl>
+        <dt>
+          <h2>Rocket Type:</h2>
+        </dt>
+        <dd>{data.launch?.rocket?.rocket_type}</dd>
+      </dl>
+      <dl>
+        <dt>
+          <h2>Details:</h2>
+        </dt>
+        <dd>{data.launch?.details}</dd>
+      </dl>
+      {console.log(data)}
+    </div>
+  );
+};
 
-            {console.log(data)}
-        </div>
-    )
-}
-
-export default LaunchDetails
+export default LaunchDetails;
