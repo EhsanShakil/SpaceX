@@ -11,3 +11,8 @@
   background-color: #232526;
   color: white;
 }
+.launchesDetails {
+  display: flex;
+  flex-direction: column;
+  color: white;
+}

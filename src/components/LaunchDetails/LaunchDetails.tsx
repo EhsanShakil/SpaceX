@@ -8,8 +8,11 @@ interface Props {
 
 const LaunchDetails: React.FC<Props> = ({ data }) => {
     return (
-        <div>
+        <div className='launchesDetails'>
             <h1>Mission Name: {data.launch?.mission_name}</h1>
+            <h1>Mission Name: {data.launch?.launch_site?.site_name}</h1>
+
+            {console.log(data)}
         </div>
     )
 }
