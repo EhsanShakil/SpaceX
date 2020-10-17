@@ -45,6 +45,42 @@ const LaunchDetails: React.FC<Props> = ({ data }) => {
         </dt>
         <dd>{data.launch?.details}</dd>
       </dl>
+      <dl>
+        <dt>
+          <h2>Pictures:</h2>
+        </dt>
+        <dd>
+          {data.launch?.links?.flickr_images?.map((images, index) => {
+            return (
+              <img
+                src={images?.toString()}
+                width="200px"
+                height="200px"
+                key={index}
+                alt="spacex"
+              />
+            );
+          })}
+        </dd>
+          </dl>
+           <dl>
+        <dt>
+          <h2>Videos:</h2>
+        </dt>
+        <dd>
+          {data.launch?.links?.flickr_images?.map((images, index) => {
+            return (
+              <img
+                src={images?.toString()}
+                width="200px"
+                height="200px"
+                key={index}
+                alt="spacex"
+              />
+            );
+          })}
+        </dd>
+      </dl>
       {console.log(data)}
     </div>
   );
