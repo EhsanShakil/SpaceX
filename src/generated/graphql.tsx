@@ -766,7 +766,7 @@ export type LaunchDetailsQuery = (
       & Pick<LaunchRocket, 'rocket_name' | 'rocket_type'>
     )>, links?: Maybe<(
       { __typename?: 'LaunchLinks' }
-      & Pick<LaunchLinks, 'flickr_images'>
+      & Pick<LaunchLinks, 'flickr_images' | 'video_link'>
     )> }
   )> }
 );
@@ -827,6 +827,7 @@ export const LaunchDetailsDocument = gql`
     }
     links {
       flickr_images
+      video_link
     }
   }
 }

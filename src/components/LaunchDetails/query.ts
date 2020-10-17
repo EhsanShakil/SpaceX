@@ -16,6 +16,7 @@ export const LaunchDetails = gql`
       }
       links {
         flickr_images
+        video_link
       }
     }
   }
